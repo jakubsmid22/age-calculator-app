@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@theme {
+  --font-poppins: "Poppins", Arial;
+  --color-purple: hsl(259, 100%, 65%);
+  --color-light-red: hsl(0, 100%, 67%);
+  --color-off-white: hsl(0, 0%, 94%);
+  --color-light-grey: hsl(0, 0%, 86%);
+  --color-smokey-grey: hsl(0, 1%, 44%);
+  --color-off-black: hsl(0, 0%, 8%);
+}
+
+.input {
+  @apply flex w-[33.33%] md:w-[22%] flex-col space-y-2;
+}
+
+.error input {
+    @apply !border-light-red
+}
+
+.error label {
+    @apply !text-light-red
+}
+
+.input p {
+  @apply text-light-red h-3 italic text-sm;
+}
+
+.input label {
+  @apply text-smokey-grey tracking-widest;
+}
+
+.input input {
+  @apply border-smokey-grey/45 w-full rounded-md border py-3 pl-5 text-2xl md:text-3xl md:py-4
+}
