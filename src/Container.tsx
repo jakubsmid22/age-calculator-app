@@ -47,6 +47,11 @@ const Container = () => {
       newErrors.day = "This field is required";
     } else if (day < 1 || day > 31) {
       newErrors.day = "Must be a valid day";
+    } else {
+      const maxDaysInMonth = new Date(year, month, 0).getDate();
+      if (day > maxDaysInMonth) {
+        newErrors.day = `Must be a valid date`;
+      }
     }
 
     if (!month) {
